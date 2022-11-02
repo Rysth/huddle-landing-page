@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;600&display=swap");
+
+:root {
+  --CL-violet: hsl(257, 40%, 49%);
+  --CL-soft-magenta: hsl(300, 69%, 71%);
+
+  --FF-poppins: "Poppins", sans-serif;
+  --FF-open-sans: "Open Sans", sans-serif;
+
+  --FS-title: clamp(1.2rem, 1.2rem + 1vw, 3rem);
+  --FS-description: clamp(0.6rem, 0.8rem + 1vw, 1.08rem);
+  --FS-details: clamp(0.6rem, 0.5rem + 1vw, 1rem);
+}
+
+*,
+*::after,
+*::before,
+html {
+  box-sizing: border-box;
+  transition: 0.15s;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  background-color: var(--CL-violet);
+  position: relative;
+  padding: 10vw;
+}
+
+body picture {
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+body picture img {
+  display: block;
+  width: 100%;
+}
+
+img {
+  object-fit: cover;
+  shape-rendering: "crispEdges";
+}
+
+header {
+  display: inherit;
+}
+
+header #brand-logo {
+  width: 45%;
+}
+
+header #illustration {
+  width: 100%;
+  margin-block: 8vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.3rem;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+main h1,
+p,
+a {
+  margin: 0;
+}
+
+main h1 {
+  font-family: var(--FF-poppins);
+  font-size: var(--FS-title);
+}
+
+main p {
+  font-family: var(--FF-open-sans);
+  font-size: var(--FS-description);
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+main a {
+  text-decoration: none;
+}
+
+.cta-button {
+  color: var(--CL-violet);
+  border-radius: 2rem;
+  font-family: var(--FF-poppins);
+  font-size: var(--FS-details);
+  padding: 0.7rem 2rem;
+  width: 65%;
+  background-color: white;
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.2);
+}
+
+.social-media {
+  width: 40%;
+  display: inherit;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+}
+
+.social-media a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 1px solid white;
+  width: 25px;
+  height: 25px;
+  border-radius: 2rem;
+  margin: 0;
+}
+
+.social-media a i {
+  font-size: var(--FS-details);
+  margin: 0;
+}
+
+.social-media a i {
+  color: white;
+  margin: 0;
+}
+
+@media (min-width: 1000px) {
+  body {
+    height: 100vh;
+    grid-template-columns: 1fr 1fr;
+    padding: 5vw;
+  }
+
+  header #brand-logo {
+    max-width: 30%;
+  }
+
+  main {
+    padding: 0 3rem;
+    align-items: flex-start;
+    text-align: initial;
+    position: relative;
+  }
+
+  main h1 {
+    max-width: 70%;
+  }
+
+  main p {
+    max-width: 80%;
+  }
+
+  .cta-button {
+    text-align: center;
+    max-width: 30%;
+  }
+
+  .cta-button:hover {
+    background-color: var(--CL-soft-magenta);
+    color: white;
+  }
+
+  main .social-media {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+
+  .social-media a {
+    width: 35px;
+    height: 35px;
+  }
+
+  .social-media a:hover {
+    outline-color: var(--CL-soft-magenta);
+  }
+
+  .social-media a:hover i {
+    color: var(--CL-soft-magenta);
+  }
+}
